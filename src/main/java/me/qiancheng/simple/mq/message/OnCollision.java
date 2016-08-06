@@ -1,9 +1,9 @@
 package me.qiancheng.simple.mq.message;
 
 /**
- * User: Joseph
- * Date: 2014/01/24
- * Time: 3:17 PM
+ * The OnCollision Message status.
+ *
+ * @author 千橙<Joseph>
  */
 public enum OnCollision
 {
