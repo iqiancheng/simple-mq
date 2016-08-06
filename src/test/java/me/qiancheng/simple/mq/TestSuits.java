@@ -12,7 +12,7 @@ import static org.testng.Assert.assertFalse;
 import static org.testng.Assert.assertNotSame;
 
 
-public class TestUtils {
+public class TestSuits {
 
 
     @Test(expectedExceptions = IllegalArgumentException.class)

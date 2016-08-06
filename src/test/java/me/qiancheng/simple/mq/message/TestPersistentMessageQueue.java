@@ -13,13 +13,9 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package me.qiancheng.simple.mq;
+package me.qiancheng.simple.mq.message;
 
 import me.qiancheng.simple.mq.config.PersistentMessageQueueConfig;
-import me.qiancheng.simple.mq.message.Message;
-import me.qiancheng.simple.mq.message.MessageInput;
-import me.qiancheng.simple.mq.message.MessageQueue;
-import me.qiancheng.simple.mq.message.MessageQueueService;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
