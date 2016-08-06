@@ -7,12 +7,9 @@ This project will also serve as a way that iqiancheng Interactive can make publi
 
 Quoting upstream:
 <pre>
-SimpleMQ is a simple persistent or in-memory message queue written in Java.
-Simple to use and config. SimpleMQ can also expose a message queue to clients on the network.
+simple-mq is a simple persistent or in-memory message queue written in Java.
+Simple to use and config. simple-mq can also expose a message queue to clients on the network.
 </pre>
 
-The original/upstream simple-mq project can be found here:
 
-> http://code.google.com/p/simple-mq/
-
-Some reference this project as "simple-mq", and there are other versions & languages on github (e.g. in erlang).
+Some reference this project as "simple-mq", and there are other versions & languages on github (e.g. in scala, erlang).
