@@ -1,21 +1,21 @@
 package me.qiancheng.simple.mq;
 
-import static org.junit.Assert.assertFalse;
-import static org.junit.Assert.assertNotSame;
-
 import me.qiancheng.simple.mq.utils.Utils;
-import org.junit.Test;
+import org.testng.annotations.Test;
 
 import java.io.File;
 import java.io.IOException;
 import java.io.Serializable;
 import java.util.ArrayList;
 
+import static org.testng.Assert.assertFalse;
+import static org.testng.Assert.assertNotSame;
+
 
 public class TestUtils {
 
 
-    @Test(expected = IllegalArgumentException.class)
+    @Test(expectedExceptions = IllegalArgumentException.class)
     public void testSerialize() {
         ArrayList<Bar> list = new ArrayList<Bar>();
         list.add(new Bar());

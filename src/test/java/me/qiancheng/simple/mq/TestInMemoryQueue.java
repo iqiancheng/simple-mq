@@ -1,10 +1,10 @@
 package me.qiancheng.simple.mq;
 
-import junit.framework.Assert;
 import me.qiancheng.simple.mq.message.*;
-import org.junit.After;
-import org.junit.Before;
-import org.junit.Test;
+import org.testng.Assert;
+import org.testng.annotations.AfterClass;
+import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Test;
 
 import java.io.Serializable;
 import java.util.ArrayList;
@@ -12,19 +12,17 @@ import java.util.Collection;
 import java.util.List;
 import java.util.Random;
 
-import static junit.framework.Assert.assertNotNull;
-import static junit.framework.Assert.assertNull;
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertFalse;
-import static org.junit.Assert.assertTrue;
+import static org.testng.Assert.*;
+import static org.testng.AssertJUnit.assertFalse;
 
 
 public class TestInMemoryQueue {
 
-    private MessageQueue queue;
     private static final String TEST_DATABASE = "test-database";
+    private final Random random = new Random();
+    private MessageQueue queue;
 
-    @Before
+    @BeforeMethod
     public void setUp() {
         queue = MessageQueueService.getMessageQueue(TEST_DATABASE);
         assertFalse(queue.deleted());
@@ -81,12 +79,10 @@ public class TestInMemoryQueue {
 
     }
 
-
-    @Test(expected = java.lang.NullPointerException.class)
+    @Test(expectedExceptions = java.lang.NullPointerException.class)
     public void sendNullMessageInput() throws NullPointerException {
         queue.send((MessageInput) null);
     }
-
 
     @Test
     public void testSendListOfMessages() {
@@ -159,8 +155,6 @@ public class TestInMemoryQueue {
     {
         return new MessageInput("not-relevant");
     }
-
-    private final Random random=new Random();
 
     private
     OnCollision randomCollisionPolicy()
@@ -337,7 +331,7 @@ public class TestInMemoryQueue {
     }
 
 
-    @After
+    @AfterClass
     public void tearDown()
     {
         queue.shutdown();

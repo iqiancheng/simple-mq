@@ -22,7 +22,7 @@ import java.io.*;
  *
  * @author 千橙<Joseph>
  */
-final class Utils {
+public class Utils {
 
     /**
      * Serialize a Serializable object to a byte array

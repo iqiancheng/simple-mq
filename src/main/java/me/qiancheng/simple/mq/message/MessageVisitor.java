@@ -3,7 +3,7 @@ package me.qiancheng.simple.mq.message;
 import java.util.List;
 
 /**
- * User: robert
+ * User: Joseph
  * Date: 2014/04/01
  * Time: 3:34 PM
  */

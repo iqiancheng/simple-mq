@@ -20,28 +20,23 @@ import me.qiancheng.simple.mq.message.Message;
 import me.qiancheng.simple.mq.message.MessageInput;
 import me.qiancheng.simple.mq.message.MessageQueue;
 import me.qiancheng.simple.mq.message.MessageQueueService;
-import org.junit.After;
-import org.junit.Before;
-import org.junit.Test;
+import org.testng.annotations.AfterClass;
+import org.testng.annotations.BeforeClass;
+import org.testng.annotations.Test;
 
 import java.util.Collection;
 
-import static junit.framework.Assert.assertNotNull;
-import static junit.framework.Assert.assertNull;
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertFalse;
-import static org.junit.Assert.assertTrue;
+import static org.testng.Assert.*;
 
 
 public class TestPersistentMessageQueue {
 
-    private MessageQueue queue;
-    private static final String TEST_DATABASE = "test-database";
-
     public static final int REVIVE_TIME = 1;
     public static final int REMOVE_TIME = 3;
+    private static final String TEST_DATABASE = "test-database";
+    private MessageQueue queue;
 
-    @Before
+    @BeforeClass
     public void setUp() {
 
         PersistentMessageQueueConfig config = new PersistentMessageQueueConfig()
@@ -129,12 +124,12 @@ public class TestPersistentMessageQueue {
         }
     }
 
-    @Test(expected = NullPointerException.class)
+    @Test(expectedExceptions = NullPointerException.class)
     public void deleteQueueWithNullName() {
         MessageQueueService.deleteMessageQueue(null);
     }
 
-    @Test(expected = NullPointerException.class)
+    @Test(expectedExceptions = NullPointerException.class)
     public void getQueueWithNullName() {
         MessageQueueService.getMessageQueue(null);
     }
@@ -145,7 +140,7 @@ public class TestPersistentMessageQueue {
         assertFalse(MessageQueueService.deleteMessageQueue("sdfgfsdgfsd"));
     }
 
-    @After
+    @AfterClass
     public void tearDown()
     {
         if (queue==null) return;
